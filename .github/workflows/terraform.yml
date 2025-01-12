@@ -36,7 +36,7 @@ jobs:
 
       - name: terraform init
         id: init
-        run: teraform init -backend-config="bucket=$BUCKET_TF_STATE"
+        run: terraform init -backend-config="bucket=$BUCKET_TF_STATE"
 
       - name: terraform format
         id: fmt
@@ -54,4 +54,4 @@ jobs:
       - name: terraform plan status
         if: steps.plan.outcome == 'failure'
         run: exit 1
-        
+
